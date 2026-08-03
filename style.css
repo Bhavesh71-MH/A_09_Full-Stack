@@ -12,6 +12,11 @@ header{
     background:#003366;
     color:white;
     padding:15px 40px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .logo{
@@ -29,10 +34,13 @@ nav a{
     text-decoration:none;
     margin-left:20px;
     font-size:18px;
+    transition: 0.3s;
 }
 
 nav a:hover{
-    color:yellow;
+    color:#ffcc00;
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 5px;
 }
 .hero{
     width:100%;
@@ -49,12 +57,18 @@ nav a:hover{
 }
 
 .hero h1{
+    color: white;
     font-size:45px;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
     margin-bottom:10px;
 }
 
 .hero p{
-    font-size:20px;
+    color: white;
+    font-size:22px;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
     margin-bottom:20px;
 }
 
@@ -69,7 +83,9 @@ nav a:hover{
 }
 
 .hero button:hover{
-    background:#e68900;
+    background:#ff9800;
+    transform:scale(1.05);
+    transition: 0.3s;
 }
 .departments{
     padding:60px 20px;
@@ -99,7 +115,8 @@ nav a:hover{
 }
 
 .dept-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .dept-card h3{
@@ -166,7 +183,8 @@ nav a:hover{
 }
 
 .placement-card:hover{
-    transform:scale(1.05);
+    transform:translateY(-10px);
+    background:#00509e;
 }
 .recruiters{
     padding:60px 20px;
@@ -233,7 +251,8 @@ nav a:hover{
 }
 
 .gallery-container img:hover{
-    transform:scale(1.05);
+    transform:scale(1.08);
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
 }
 .contact{
     padding:60px 20px;
@@ -291,6 +310,7 @@ table{
     width:80%;
     margin:auto;
     border-collapse:collapse;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 th{
@@ -299,13 +319,17 @@ th{
 }
 
 th,td{
-    border:1px solid black;
-    padding:12px;
-    text-align:center;
+    padding:15px;
+    border:1px solid #ddd;
 }
-.contact{
-    text-align:center;
+
+tr:nth-child(even){
+    background: #f2f2f2;
 }
+tr:hover {
+    background: #d9edf7;
+}
+
 
 .contact form{
     width:450px;
@@ -318,13 +342,7 @@ th,td{
     padding:10px;
     margin:10px 0;
 }
-footer{
-    width:100%;
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+
 .about,
 .departments,
 .notices,
@@ -334,22 +352,8 @@ footer{
 .contact{
     margin-top:40px;
 }
-.hero h1{
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.hero p{
-    color: white;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-.hero-text{
-    background: rgba(0,0,0,0.6);
-    padding: 30px;
-    border-radius: 10px;
-}
+
+
 .dept-card{
     width:250px;
     height:180px;
@@ -439,4 +443,55 @@ h2{
 }
 .hero{
     height:90vh;
+}
+
+
+/* Responsive Design */
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+    .dept-container,
+    .placement-container,
+    .logo-container,
+    .info-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    .contact form{
+        width:90%;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f9fa;
 }
